@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edenstyle.css">
+    <title>Customization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, nav, footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="button"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        function sendWhatsApp() {
+            const name = document.getElementById('client-name').value;
+            const customSpec = document.getElementById('custom').value;
+            const materialType = document.getElementById('material-type').value;
+    
+            const message = `Name: ${name}\nSpecification: ${customSpec}\nMaterial Type: ${materialType}`;
+            const whatsappNumber = '09038977566'; // Replace with your WhatsApp number
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+            window.open(whatsappLink, '_blank');
+        }
+    
+        function sendTelegram() {
+            const name = document.getElementById('client-name').value;
+            const customSpec = document.getElementById('custom').value;
+            const materialType = document.getElementById('material-type').value;
+    
+            const message = `Name: ${name}\nSpecification: ${customSpec}\nMaterial Type: ${materialType}`;
+            const telegramBotToken = 'idowujdbot'; // Replace with your Telegram bot token
+            const chatId = '6709260958'; // Replace with your chat ID
+            const telegramLink = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+    
+            fetch(telegramLink)
+                .then(response => {
+                    if (response.ok) {
+                        alert('Message sent to Telegram!');
+                    } else {
+                        alert('Failed to send message to Telegram.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error sending message to Telegram.');
+                });
+        }
+    
+        function submitForm() {
+            sendWhatsApp();
+            sendTelegram();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="/eden images/eden.jpg" alt="Eden Logo">
+    </header>
+    <nav>
+        <a href="edenidex.html">Home</a> |
+        <a href="shop.html">Shop</a> |
+        <a href="about.html">About Us</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <h1>Customization Form</h1>
+    <form id="customization-form">
+        <h2>Provide Your Customization Details</h2>
+
+        <label for="client-name">Name:</label>
+        <input type="text" id="client-name" name="client-name" placeholder="Enter your full name" required>
+
+        <label for="custom">Your Specification</label>
+        <textarea name="custom" id="custom" rows="5" placeholder="Describe your requirements here..." required></textarea>
+
+        <label for="material-type">Type of Material</label>
+        <select id="material-type" name="material-type" required>
+            <option value="">Select a material</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Linen">Linen</option>
+            <option value="Silk">Silk</option>
+            <option value="Rayon">Rayon</option>
+            <option value="Bamboo">Bamboo</option>
+            <option value="Hemp">Hemp</option>
+            <option value="Voile">Voile</option>
+            <option value="Chiffon">Chiffon</option>
+        </select>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <footer>
+        <p>&copy; 2025 EDEN AFRICAN STORE. All rights reserved.</p>
+        <a href="terms.html">Terms and Conditions</a>
+    </footer>
+
+   
