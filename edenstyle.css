@@ -1,15 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4; /* Existing background color */
+        background-image: url('/6006701.jpg'); /* Add your image path here */
+        background-size: cover; /* Ensures the image covers the entire area */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
-    background: linear-gradient(145deg, #d1d8e0, #a5b1c2);
+    background-image: url('/tribal\ patt..jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     box-shadow: 10px 10px 30px #bec4ca, -10px -10px 30px #ffffff;
     transform: perspective(1000px) rotateX(10deg);
     border-radius: 10px;
@@ -22,26 +30,29 @@ header img {
     filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
-
 nav {
     display: flex;
     justify-content: center;
     background-color: #444;
 }
+
 nav a {
     color: white;
     text-decoration: none;
     padding: 1em;
     display: block;
 }
+
 nav a:hover {
     background-color: #555;
 }
+
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 1em;
 }
+
 .product {
     background: #fff;
     border: 1px solid #ddd;
@@ -52,105 +63,40 @@ nav a:hover {
     flex: 1 1 calc(33.333% - 2em);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .product img {
     max-width: 50%;
     border-bottom: 1px solid #ddd;
     margin-bottom: 1em;
 }
+
 .product h3 {
     margin: 0.5em 0;
 }
+
 .product p {
     color: #555;
 }
+
 .product button {
-    background-color: #28a745;
+    background-color: gold;
     color: #fff;
     border: none;
     padding: 0.5em 1em;
     border-radius: 5px;
     cursor: pointer;
 }
+
 .product button:hover {
     background-color: #218838;
 }
+
 .products {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
 }
-footer {
-    text-align: center;body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
-}
-header h1 {
-    margin: 0;
-}
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-    display: block;
-}
-nav a:hover {
-    background-color: #555;
-}
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1em;
-}
-.product {
-    background: #fff;
-    border: 1px solid #ddd;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 5px;
-    text-align: center;
-    flex: 1 1 calc(33.333% - 2em);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.product img {
-    max-width: 100%;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1em;
-}
-.product h3 {
-    margin: 0.5em 0;
-}
-.product p {
-    color: #555;
-}
-.product button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.product button:hover {
-    background-color: #218838;
-}
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-}
+
 footer {
     text-align: center;
     background: #333;
@@ -158,6 +104,7 @@ footer {
     padding: 1em 0;
     margin-top: 1em;
 }
+
 @media (max-width: 1200px) {
     .container {
         padding: 0.5em;
@@ -168,14 +115,12 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack navigation links */
+    .product img {
+        max-width: 80%; /* Increase image size on mobile */
+        height: auto; /* Maintain aspect ratio */
     }
-    .product {
-        flex: 1 1 100%; /* One product per row */
-    }
-    header {
-        height: 150px; /* Reduce header height */
+    .product h3, .product p {
+        font-size: 14px; /* Optional: Reduce text size */
     }
 }
 
@@ -190,6 +135,7 @@ footer {
         padding: 8px; /* Adjust button size */
     }
 }
+
 /* WhatsApp notification button styles */
 .whatsapp-notification-button {
     position: fixed;
@@ -201,10 +147,10 @@ footer {
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-  }
-  
-  /* WhatsApp notification popup styles */
-  .whatsapp-notification-popup {
+}
+
+/* WhatsApp notification popup styles */
+.whatsapp-notification-popup {
     position: fixed;
     bottom: 70px;
     right: 20px;
