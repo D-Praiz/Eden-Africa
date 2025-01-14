@@ -158,6 +158,38 @@ footer {
     padding: 1em 0;
     margin-top: 1em;
 }
+@media (max-width: 1200px) {
+    .container {
+        padding: 0.5em;
+    }
+    .product {
+        flex: 1 1 calc(50% - 2em); /* Two products per row */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation links */
+    }
+    .product {
+        flex: 1 1 100%; /* One product per row */
+    }
+    header {
+        height: 150px; /* Reduce header height */
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        max-height: 100px; /* Further reduce image size */
+    }
+    nav a {
+        padding: 0.5em; /* Reduce padding for smaller screens */
+    }
+    .whatsapp-notification-button {
+        padding: 8px; /* Adjust button size */
+    }
+}
 /* WhatsApp notification button styles */
 .whatsapp-notification-button {
     position: fixed;
