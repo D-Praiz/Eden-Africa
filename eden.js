@@ -50,3 +50,43 @@ document.querySelectorAll('.motion-image').forEach(image => {
         image.style.transform = 'scale(1)';
     });
 });
+function sendWhatsApp() {
+            const name = document.getElementById('client-name').value;
+            const customSpec = document.getElementById('custom').value;
+            const materialType = document.getElementById('material-type').value;
+    
+            const message = `Name: ${name}\nSpecification: ${customSpec}\nMaterial Type: ${materialType}`;
+            const whatsappNumber = '+2348077223301'; // Replace with your WhatsApp number
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+            window.open(whatsappLink, '_blank');
+        }
+    
+        function sendTelegram() {
+            const name = document.getElementById('client-name').value;
+            const customSpec = document.getElementById('custom').value;
+            const materialType = document.getElementById('material-type').value;
+    
+            const message = `Name: ${name}\nSpecification: ${customSpec}\nMaterial Type: ${materialType}`;
+            const telegramBotToken = 'idowujdbot'; // Replace with your Telegram bot token
+            const chatId = '6709260958'; // Replace with your chat ID
+            const telegramLink = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+    
+            fetch(telegramLink)
+                .then(response => {
+                    if (response.ok) {
+                        alert('Message sent to Telegram!');
+                    } else {
+                        alert('Failed to send message to Telegram.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error sending message to Telegram.');
+                });
+        }
+    
+        function submitForm() {
+            sendWhatsApp();
+            sendTelegram();
+        }

@@ -4,36 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="edenstyle.css">
-    <title>About Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function sendWhatsApp() {
+            const name = document.getElementById('name').value; // Updated to match the correct ID
+            const email = document.getElementById('email').value; // Capture email
+            const message = document.getElementById('message').value; // Capture message
+
+            const whatsappMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+            const whatsappNumber = '+2348077223301'; // Replace with your WhatsApp number
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            window.open(whatsappLink, '_blank');
         }
-        header, nav, footer {
-            text-align: center;
-            margin-bottom: 20px;
+
+        function submitForm() {
+            sendWhatsApp();
         }
-        main {
-            padding: 20px;
-        }
-        .bordered-section {
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            background-color: #fff;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-    </style>
+    </script>
 </head>
 <body>
     <header>
@@ -47,40 +37,31 @@
     </nav>
     
     <main>
-        <div class="bordered-section">
-            <h1>About EDEN AFRICAN STORE</h1>
-            <p>Welcome to EDEN AFRICAN STORE, your premier destination for high-quality Adire clothing and accessories. Our mission is to celebrate and promote the rich cultural heritage of African textiles through our unique and vibrant designs.</p>
+        <div class="contact-info">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, comments, or feedback, feel free to reach out to us. We would love to hear from you!</p>
+            <h2>Our Contact Information</h2>
+            <p><strong>Email:</strong> <a href="mailto:edenafricanstores.com">edenafricanstores</a></p
+            <p><strong>Phone:</strong> +2348077223301</p>
+            <p><strong>Address:</strong> Ifo, Ogun state, Nigeria</p>
+            <p> <a href="https://www.instagram.com/edenafricanstores" target="_blank"><i class="fab fa-instagram"></i>edenafricanstores</a></p>
+            <p> <a href="https://www.tiktok.com/@edenafricanstores" target="_blank"><i class="fab fa-tiktok"></i>edenafricanstores</a></p>
         </div>
 
-        <div class="bordered-section">
-            <h2>Our Story</h2>
-            <p>Founded in 2025, EDEN AFRICAN STORE was born out of a passion for traditional African craftsmanship and a desire to bring these beautiful fabrics to a global audience. We believe that fashion should not only be stylish but also tell a story. Each piece in our collection is carefully crafted, reflecting the artistry and history of the Adire technique.</p>
-        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-        <div class="bordered-section">
-            <h2>Our Products</h2>
-            <p>We offer a wide range of products including:</p>
-            <ul>
-                <li>Adire Shirts</li>
-                <li>Adire T-Shirts</li>
-                <li>Adire Gowns</li>
-                <li>Adire Hoodies</li>
-                <li>Customized Patterns</li>
-                <li>Silk Adire Materials</li>
-                <li>Adire Tops</li>
-                <li>Adire Batik Tees</li>
-            </ul>
-            <p>Each product is designed to elevate your wardrobe and express your unique style.</p>
-        </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
 
-        <div class="bordered-section">
-            <h2>Our Commitment</h2>
-            <p>At EDEN AFRICAN STORE, we are committed to sustainability and ethical practices. We work closely with local artisans to ensure fair wages and safe working conditions. Our goal is to create a positive impact in the communities we work with while providing you with exceptional products.</p>
-        </div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
 
-        <div class="bordered-section">
-            <h2>Join Us</h2>
-            <p>We invite you to explore our collection and experience the beauty of Adire fashion. Whether you are looking for a statement piece or a unique gift, we have something for everyone. Thank you for supporting our journey and celebrating African culture with us!</p>
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
         </div>
     </main>
     
