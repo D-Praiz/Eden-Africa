@@ -12,7 +12,17 @@ function showWhatsAppPopup() {
 // Add event listener to the WhatsApp button
 document.querySelector(".whatsapp-notification-button").addEventListener("click", (event) => {
     event.preventDefault(); // Prevent default action
-    showWhatsAppPopup();
+
+    // Get the message from the input field
+    const messageInput = document.getElementById('whatsapp-message');
+    const message = messageInput.value || "Hello, my name is ..........., would love to ask about ........ "; // Default message if input is empty
+    const phoneNumber = "+2348077223301"; // Replace with the recipient's phone number
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp with the message
+    window.open(whatsappUrl, '_blank');
+    
+    showWhatsAppPopup(); // Show the popup
 });
 
 // Add dynamic date to the footer
@@ -22,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         footer.innerHTML += ` | Updated: ${new Date().toLocaleDateString()}`;
     }
 });
+
 document.querySelector('form').addEventListener('submit', function(event) {
     const name = document.getElementById('client-name').value;
     if (!name) {
@@ -29,6 +40,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form submission
     }
 });
+
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -37,6 +49,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
+
 document.querySelector('.whatsapp-notification-button').addEventListener('click', () => {
     // Track the click event
     console.log('WhatsApp button clicked');
