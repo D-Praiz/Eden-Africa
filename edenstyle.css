@@ -1,26 +1,50 @@
 body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4; /* Existing background color */
-        background-image: url('/6006701.jpg'); /* Add your image path here */
-        background-size: cover; /* Ensures the image covers the entire area */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat; /* Prevents the image from repeating */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fallback background color */
+    background-image: url('/6006701.jpg'); /* Default background image for large screens */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    body {
+        background-image: url('/6006701.jpg'); /* Background image for small screens */
+    }
+}
+
+/* Media query for medium screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+    body {
+        background-image: url('/6006701.jpg'); /* Background image for medium screens */
+    }
+}
+
+/* Media query for large screens */
+@media (min-width: 1201px) {
+    body {
+        background-image: url('/6006701.jpg'); /* Background image for large screens */
+    }
+}
+
 /* Styling for h1 elements */
 h1 {
-    color:red; /* Change the text color to a shade of red */
+    color: red; /* Change the text color to a shade of red */
     font-size: 2.5em; /* Increase the font size */
     text-align: center; /* Center align the text */
     margin-bottom: 20px; /* Add space below the heading */
 }
-h2{
+
+h2 {
     color: red;
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
 }
+
 /* Styling for p elements */
 p {
     color: #333; /* Change the text color to a dark gray */
@@ -29,6 +53,7 @@ p {
     text-align: justify; /* Justify the text */
     margin: 10px 0; /* Add vertical spacing */
 }
+
 header {
     display: flex;
     justify-content: center;
@@ -42,6 +67,7 @@ header {
     transform: perspective(1000px) rotateX(10deg);
     border-radius: 10px;
 }
+
 a {
     background-color: red;
     color: white; /* Default color */
@@ -55,6 +81,7 @@ a:hover {
 .styled-link {
     font-weight: bold; /* Bold text for specific links */
 }
+
 header img {
     max-height: 150px;
     width: auto;
@@ -116,7 +143,8 @@ nav a:hover {
     border: none;
     padding: 0.5em 1em;
     border-radius: 5px;
-    cursor: pointer;
+    cursor ```css
+: pointer;
 }
 
 .product button:hover {
@@ -193,17 +221,18 @@ footer {
     z-index: 1000;
     display: none;
     transition: all 0.3s ease;
-  }
-  
-  .whatsapp-notification-content {
+}
+
+.whatsapp-notification-content {
     font-size: 14px;
     color: #333;
-  }
-  
-  .whatsapp-notification-content a {
+}
+
+.whatsapp-notification-content a {
     text-decoration: none;
     color: #25D366;
-  }
-  .whatsapp-notification-button:hover {
+}
+
+.whatsapp-notification-button:hover {
     background-color: #1EBE5D;
 }
