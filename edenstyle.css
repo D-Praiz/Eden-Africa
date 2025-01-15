@@ -8,7 +8,27 @@ body {
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents the image from repeating */
 }
-
+/* Styling for h1 elements */
+h1 {
+    color:red; /* Change the text color to a shade of red */
+    font-size: 2.5em; /* Increase the font size */
+    text-align: center; /* Center align the text */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+h2{
+    color: red;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+/* Styling for p elements */
+p {
+    color: #333; /* Change the text color to a dark gray */
+    font-size: 1.2em; /* Increase the font size */
+    line-height: 1.5; /* Increase line height for better readability */
+    text-align: justify; /* Justify the text */
+    margin: 10px 0; /* Add vertical spacing */
+}
 header {
     display: flex;
     justify-content: center;
@@ -22,7 +42,19 @@ header {
     transform: perspective(1000px) rotateX(10deg);
     border-radius: 10px;
 }
+a {
+    background-color: red;
+    color: white; /* Default color */
+    text-decoration: none; /* Remove underline */
+}
 
+a:hover {
+    color: blue; /* Color on hover */
+}
+
+.styled-link {
+    font-weight: bold; /* Bold text for specific links */
+}
 header img {
     max-height: 150px;
     width: auto;
