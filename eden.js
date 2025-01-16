@@ -90,3 +90,20 @@ function sendWhatsApp() {
             sendWhatsApp();
             sendTelegram();
         }
+        // Function to open the Terms and Conditions popup
+function openPopup() {
+    document.getElementById("terms-popup").style.display = "block";
+}
+
+// Function to close the Terms and Conditions popup
+function closePopup() {
+    document.getElementById("terms-popup").style.display = "none";
+}
+
+// Event listener to close the popup when clicking outside of it
+window.onclick = function(event) {
+    const popup = document.getElementById("terms-popup");
+    if (event.target == popup) {
+        closePopup();
+    }
+}

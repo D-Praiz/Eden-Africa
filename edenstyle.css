@@ -37,7 +37,16 @@ h1 {
     text-align: center; /* Center align the text */
     margin-bottom: 20px; /* Add space below the heading */
 }
-
+#add{
+    color: black;
+    background-color: #f4f4f4;
+}
+.terms{
+    color: blue;
+    background-color: whitesmoke;
+    text-align: center;
+    
+}
 h2 {
     color: red;
     text-align: center;
