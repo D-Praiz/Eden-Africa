@@ -245,3 +245,6 @@ footer {
 .whatsapp-notification-button:hover {
     background-color: #1EBE5D;
 }
+.popup{
+    display: none;
+}
