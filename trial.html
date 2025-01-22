@@ -86,7 +86,7 @@
       visibility: visible;
       opacity: 1;
   }
-  </style>
+</style>
 <body>
     <header>
         <img src="/eden images/eden.jpg" alt="Eden Logo">
@@ -111,9 +111,8 @@
 
             <label for="product">Select Product:</label>
             <select id="product" name="product" required>
-                <option value=""><a href="https://edenafrica.vercel.app/eden images/hoodies/photo_6037415475241141616_y.jpg"></a>Adire Hoodies</option>
-                
-               
+                <option value="" data-url="">Select a product</option>
+                <option value="Adire Hoodies" data-url="https://edenafrica.vercel.app/eden images/hoodies/photo_6037415475241141616_y.jpg">Adire Hoodies</option>
             </select>
 
             <label for="quantity">Quantity:</label>
@@ -121,8 +120,6 @@
 
             <button type="button" onclick="submitOrder()">Submit Order</button>
         </form>
-
-       
     </main>
 
     <footer>
@@ -133,10 +130,12 @@
         function submitOrder() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const product = document.getElementById('product').value;
+            const productSelect = document.getElementById('product');
+            const product = productSelect.options[productSelect.selectedIndex].value;
+            const productUrl = productSelect.options[productSelect.selectedIndex].getAttribute('data-url');
             const quantity = document.getElementById('quantity').value;
 
-            const whatsappMessage = `Name: ${name}\nEmail: ${email}\nProduct: ${product}\nQuantity: ${quantity}`;
+            const whatsappMessage = `Name: ${name}\nEmail: ${email}\nProduct: ${product}\nProduct URL: ${productUrl}\nQuantity: ${quantity}`;
             const whatsappNumber = '+2348077223301'; // Replace with your WhatsApp number
             const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -145,6 +144,3 @@
     </script>
 </body>
 </html>
-
-
-
