@@ -59,33 +59,6 @@
   button[type="button"]:hover {
       background-color: #3e8e41;
   }
-
-  .tooltip {
-      position: relative;
-      display: inline-block;
-  }
-
-  .tooltip .tooltip-text {
-      visibility: hidden;
-      width: 200px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -100px;
-      opacity: 0;
-      transition: opacity 0.3s;
-  }
-
-  .tooltip:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
-  }
 </style>
 <body>
     <header>
@@ -112,7 +85,11 @@
             <label for="product">Select Product:</label>
             <select id="product" name="product" required>
                 <option value="" data-url="">Select a product</option>
-                <option value="Adire Hoodies" data-url="https://edenafrica.vercel.app/eden%20images/hoodies/photo_6037415475241141616_y.jpg">Adire Hoodies</option>
+                <option value="Adire Hoodies 1" data-url="https://edenafrica.vercel.app/eden%20images/hoodies/photo_6037415475241141616_y.jpg">Adire Hoodies</option>
+                <option value="Adire Hoodies 2" data-url="https://edenafrica.vercel.app/eden%20images/hoodies/photo_6037415475241141617_y.jpg">Adire Hoodies 2</option>
+                <option value="Adire Hoodies 3" data-url="https://edenafrica.vercel.app/eden%20images/hoodies/photo_6037415475241141618_y.jpg">Adire Hoodies 3</option>
+                
+                <!-- Add more products with their URLs here -->
             </select>
             
             <label for="quantity">Quantity:</label>
